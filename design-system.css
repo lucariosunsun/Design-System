@@ -181,10 +181,10 @@
   --surface-400: #71717a;
   --surface-500: #a1a1aa;
   --surface-600: #d4d4d8;
-  --surface-700: #e4e4e7;
-  --surface-800: #f4f4f5;
-  --surface-900: #fafafa;
-  --surface-950: #ffffff;
+    --surface-700: #e4e4e7;
+    --surface-800: #f4f4f5;
+    --surface-900: #fafafa;
+    --surface-950: #ffffff;
 }
 
 /* ============================================
@@ -408,7 +408,32 @@ body {
   box-shadow: var(--shadow-lg);
 }
 
-/* Button Loading State */
+/* NEW: Gradient Primary Button */
+.btn-gradient-primary {
+  background: var(--gradient-primary);
+  color: white;
+  box-shadow: var(--shadow-sm);
+}
+.btn-gradient-primary:hover {
+  background: linear-gradient(135deg, var(--brand-400), var(--brand-600));
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* NEW: Subtle Secondary Outline */
+.btn-subtle-outline {
+  background-color: var(--surface-0);
+  color: var(--surface-700);
+  border: 1px solid var(--surface-300);
+}
+.btn-subtle-outline:hover {
+  background-color: var(--surface-50);
+  border-color: var(--surface-400);
+  box-shadow: var(--shadow-xs);
+}
+
+
+/* Button Loading State - FIX: Use color property to define spinner color */
 .btn-loading {
   position: relative;
   /* Make text transparent but keep it for screen readers */
@@ -421,7 +446,8 @@ body {
   position: absolute;
   width: 16px;
   height: 16px;
-  border: 2px solid currentColor;
+  /* Use 'currentColor' so the spinner inherits the text color (e.g., white for primary) */
+  border: 2px solid currentColor; 
   border-right-color: transparent;
   border-radius: 50%;
   animation: spin 0.8s linear infinite;
@@ -1156,7 +1182,8 @@ body {
 
 /* Dark ripple for light buttons */
 .btn-outline .ripple-element, 
-.btn-ghost .ripple-element {
+.btn-ghost .ripple-element,
+.btn-subtle-outline .ripple-element {
   background: rgba(0, 0, 0, 0.1); 
 }
 
@@ -1174,4 +1201,17 @@ body {
     opacity: 0;
     transform: scale(4);
   }
+}
+
+/* ============================================
+   CHART COMPONENTS (D3/SVG PLACEHOLDERS)
+   ============================================ */
+
+.chart-data-list {
+  /* Used for screen readers to convey chart data */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  left: -9999px;
 }
