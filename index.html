@@ -232,10 +232,6 @@
     }
   </script>
   <style>
-    /* NOTE: All custom CSS styles are placed directly into the design-system.css file. 
-       This <style> block is kept only for the Tailwind config override and the iOS utilities which use Tailwind colors. 
-       We will now merge the custom styles from the previous HTML into design-system.css for better separation. */
-
     :root {
       --focus-ring-color: #3b82f6;
       --focus-ring-width: 3px;
@@ -553,12 +549,12 @@
             <span class="zh-only font-chinese">全面且無障礙的設計系統，採用 Nunito Sans 字型、iOS 組件、玻璃效果，以及符合 WCAG 標準的組件。</span>
           </p>
           <div class="flex flex-col sm:flex-row gap-4">
-            <a href="#components" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-surface-900 text-white rounded-xl font-semibold transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg active:scale-[0.98] focus-visible-ring">
+            <a href="#buttons" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-surface-900 text-white rounded-xl font-semibold transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg active:scale-[0.98] focus-visible-ring ripple">
               <span class="en-only">Explore Components</span>
               <span class="zh-only">探索組件</span>
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
             </a>
-            <a href="#accessibility" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-white text-surface-900 rounded-xl font-semibold border-2 border-surface-200 transition-all duration-200 hover:bg-surface-50 active:scale-[0.98] focus-visible-ring">
+            <a href="#accessibility" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-white text-surface-900 rounded-xl font-semibold border-2 border-surface-200 transition-all duration-200 hover:bg-surface-50 active:scale-[0.98] focus-visible-ring ripple">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
               <span class="en-only">Accessibility Guide</span>
               <span class="zh-only">無障礙指南</span>
@@ -857,11 +853,17 @@ WCAG AA: Use 600-900 for text on white (4.5:1 contrast).</code>
                 <button class="btn btn-primary btn-lg ripple" onclick="showToast('Primary Large Clicked!')" aria-live="polite">
                   Primary Large
                 </button>
+                <button class="btn btn-gradient-primary btn-md ripple">
+                  Gradient Primary
+                </button>
                 <button class="btn btn-secondary btn-md ripple">
                   Secondary Medium
                 </button>
                 <button class="btn btn-outline btn-sm ripple">
                   Outline Small
+                </button>
+                <button class="btn btn-subtle-outline btn-md ripple">
+                  Subtle Outline
                 </button>
                 <button class="btn btn-ghost btn-md ripple">
                   Ghost Button
@@ -872,17 +874,44 @@ WCAG AA: Use 600-900 for text on white (4.5:1 contrast).</code>
               </div>
               <div class="flex flex-wrap items-center gap-4 pt-4 border-t border-surface-100">
                 <button class="btn btn-primary btn-md btn-loading" disabled>
-                  <span aria-hidden="true">Loading...</span>
+                  Loading...
                 </button>
                 <button class="btn btn-secondary btn-md btn-loading" disabled>
-                  <span aria-hidden="true">Submitting...</span>
+                  Submitting...
                 </button>
                 <button class="btn btn-outline btn-md btn-loading" disabled>
-                  <span aria-hidden="true">Fetching...</span>
+                  Fetching...
                 </button>
-                <button class="btn btn-primary btn-icon btn-md" aria-label="Add item">
+                <button class="btn btn-primary btn-icon btn-md ripple" aria-label="Add item">
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
                 </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl p-6 lg:p-8 shadow-sm border border-surface-200">
+            <h3 class="text-lg font-semibold mb-6">SVG Icons Library (24x24)</h3>
+            <div class="flex flex-wrap items-center gap-4">
+              <div class="w-10 h-10 flex items-center justify-center text-surface-700 hover:text-brand-600 transition-colors" title="Settings">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              </div>
+              <div class="w-10 h-10 flex items-center justify-center text-surface-700 hover:text-brand-600 transition-colors" title="Download">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+              </div>
+              <div class="w-10 h-10 flex items-center justify-center text-surface-700 hover:text-brand-600 transition-colors" title="Lock">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6-4h12m-6-10V4a2 2 0 00-2-2H8a2 2 0 00-2 2v2m12 0v2m0 0v10a2 2 0 01-2 2H8a2 2 0 01-2-2V8a2 2 0 012-2h8z"/></svg>
+              </div>
+              <div class="w-10 h-10 flex items-center justify-center text-surface-700 hover:text-brand-600 transition-colors" title="Calendar">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-4 9H5m14 0H13m-4 4H5m14 0H13m-4 4H5m14 0H13M5 3h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2z"/></svg>
+              </div>
+              <div class="w-10 h-10 flex items-center justify-center text-surface-700 hover:text-brand-600 transition-colors" title="Bell (Notifications)">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
+              </div>
+              <div class="w-10 h-10 flex items-center justify-center text-error-600 hover:text-error-700 transition-colors" title="Trash">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+              </div>
+              <div class="w-10 h-10 flex items-center justify-center text-success-600 hover:text-success-700 transition-colors" title="Checkmark Circle">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
               </div>
             </div>
           </div>
@@ -1082,7 +1111,7 @@ WCAG AA: Use 600-900 for text on white (4.5:1 contrast).</code>
           <div class="lg:col-span-3">
             <h3 class="heading-4 mb-4">List Group (Settings Example)</h3>
             <div class="list-group max-w-lg">
-              <div class="list-item list-item-interactive focus-visible-ring">
+              <div class="list-item list-item-interactive focus-visible-ring ripple">
                 <span class="font-medium text-surface-900">Email Notifications</span>
                 <span class="text-brand-600">On</span>
               </div>
@@ -1090,7 +1119,7 @@ WCAG AA: Use 600-900 for text on white (4.5:1 contrast).</code>
                 <span class="font-medium text-surface-900">Subscription Status</span>
                 <span class="badge badge-success">Active</span>
               </div>
-              <div class="list-item list-item-interactive focus-visible-ring">
+              <div class="list-item list-item-interactive focus-visible-ring ripple">
                 <span class="font-medium text-surface-900">Language</span>
                 <span class="text-surface-600">English (US)</span>
               </div>
@@ -1134,12 +1163,12 @@ WCAG AA: Use 600-900 for text on white (4.5:1 contrast).</code>
             <div class="col-span-3 bg-surface-50 border-r border-surface-100 p-6 space-y-4">
               <p class="font-bold text-surface-900">Sidebar</p>
               <div class="h-8 bg-brand-100 rounded-md flex items-center px-3">
-                <div class="status-pulse bg-brand-600 mr-2"></div>
+                <div class="status-pulse text-brand-600 mr-2"></div>
                 <span class="text-sm text-brand-800">Active Link</span>
               </div>
               <div class="h-8 bg-surface-100 rounded-md text-sm text-surface-600 flex items-center px-3">Reports</div>
               <div class="h-8 bg-surface-100 rounded-md text-sm text-surface-600 flex items-center px-3">Settings</div>
-              <div class="skeleton-text h-3 w-1/2 mt-8"></div>
+              <div class="skeleton-text h-3 w-1/2 mt-8 bg-surface-200 rounded-sm"></div>
             </div>
             <div class="col-span-9 p-6 space-y-6">
               <p class="font-bold text-surface-900">Main Content Area</p>
@@ -1193,18 +1222,18 @@ Use aria-current="page" for active items. role="navigation" on nav containers.</
             <h3 class="text-lg font-semibold mb-6">Breadcrumbs</h3>
             <nav aria-label="Breadcrumb" class="space-y-4">
               <ol class="flex items-center gap-2 text-sm">
-                <li><a href="#" class="text-surface-500 hover:text-surface-900 transition-colors focus-visible-ring rounded">Home</a></li>
+                <li><a href="#" class="text-surface-500 hover:text-surface-900 transition-colors focus-visible-ring rounded ripple">Home</a></li>
                 <li class="text-surface-400">/</li>
-                <li><a href="#" class="text-surface-500 hover:text-surface-900 transition-colors focus-visible-ring rounded">Products</a></li>
+                <li><a href="#" class="text-surface-500 hover:text-surface-900 transition-colors focus-visible-ring rounded ripple">Products</a></li>
                 <li class="text-surface-400">/</li>
-                <li><a href="#" class="text-surface-500 hover:text-surface-900 transition-colors focus-visible-ring rounded">Electronics</a></li>
+                <li><a href="#" class="text-surface-500 hover:text-surface-900 transition-colors focus-visible-ring rounded ripple">Electronics</a></li>
                 <li class="text-surface-400">/</li>
                 <li><span class="text-surface-900 font-medium" aria-current="page">Headphones</span></li>
               </ol>
               <ol class="flex items-center gap-2 text-sm">
-                <li><a href="#" class="text-brand-600 hover:text-brand-700 transition-colors focus-visible-ring rounded">Dashboard</a></li>
+                <li><a href="#" class="text-brand-600 hover:text-brand-700 transition-colors focus-visible-ring rounded ripple">Dashboard</a></li>
                 <li><svg class="w-4 h-4 text-surface-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></li>
-                <li><a href="#" class="text-brand-600 hover:text-brand-700 transition-colors focus-visible-ring rounded">Settings</a></li>
+                <li><a href="#" class="text-brand-600 hover:text-brand-700 transition-colors focus-visible-ring rounded ripple">Settings</a></li>
                 <li><svg class="w-4 h-4 text-surface-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></li>
                 <li><span class="text-surface-900 font-medium" aria-current="page">Profile</span></li>
               </ol>
@@ -1485,7 +1514,7 @@ Include -webkit-backdrop-filter for Safari. Border: 1px white/20 for depth.</cod
 
         <div class="grid lg:grid-cols-2 gap-6 lg:gap-8">
           <div class="bg-white rounded-2xl p-6 lg:p-8 shadow-sm border border-surface-200">
-            <h3 class="text-lg font-semibold mb-6">Status Indicators</h3>
+            <h3 class="text-lg font-semibold mb-6">Status Indicators (Pulse Animation)</h3>
             <div class="space-y-4">
               <div class="flex items-center gap-3 p-3 bg-success-50 rounded-xl" role="status">
                 <div class="status-pulse text-success-500"></div>
@@ -1570,17 +1599,45 @@ Include -webkit-backdrop-filter for Safari. Border: 1px white/20 for depth.</cod
           <div>
             <p class="text-brand-600 font-semibold mb-2 tracking-wide uppercase text-sm">Data Visualization</p>
             <h2 id="charts-heading" class="font-display text-3xl lg:text-4xl font-bold">
-              <span class="en-only">Charts & Graphs</span>
-              <span class="zh-only font-chinese">圖表與視覺化</span>
+              <span class="en-only">Charts & Graphs (4 Variants)</span>
+              <span class="zh-only font-chinese">圖表與視覺化（4種變體）</span>
             </h2>
           </div>
         </div>
 
         <div class="grid lg:grid-cols-2 gap-6 lg:gap-8">
           <div class="bg-white rounded-2xl p-6 lg:p-8 shadow-sm border border-surface-200">
+            <h3 class="text-lg font-semibold mb-2">Line Chart</h3>
+            <p class="text-sm text-surface-500 mb-6">User Growth over 6 Months</p>
+            <div class="relative h-48" role="img" aria-label="Line chart showing user growth from 0 in January to 100 in June.">
+              <svg class="w-full h-full" viewBox="0 0 400 160" preserveAspectRatio="none">
+                <line x1="0" y1="40" x2="400" y2="40" stroke="#e2e8f0" stroke-width="1"/>
+                <line x1="0" y1="80" x2="400" y2="80" stroke="#e2e8f0" stroke-width="1"/>
+                <line x1="0" y1="120" x2="400" y2="120" stroke="#e2e8f0" stroke-width="1"/>
+                
+                <path d="M0,130 L66,110 L133,115 L200,80 L266,90 L333,50 L400,25 L400,160 L0,160 Z" fill="url(#chartGradient)" opacity="0.3"/>
+                
+                <path d="M0,130 L66,110 L133,115 L200,80 L266,90 L333,50 L400,25" class="chart-line" stroke="#2563eb"/>
+                
+                <circle cx="400" cy="25" r="5" fill="#2563eb" class="chart-dot"/>
+                
+                <defs>
+                  <linearGradient id="chartGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#2563eb"/>
+                    <stop offset="100%" stop-color="#2563eb" stop-opacity="0"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+              <div class="flex justify-between mt-2 text-xs text-surface-500">
+                <span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-white rounded-2xl p-6 lg:p-8 shadow-sm border border-surface-200">
             <h3 class="text-lg font-semibold mb-2">Bar Chart</h3>
-            <p class="text-sm text-surface-500 mb-6">Monthly Revenue</p>
-            <div class="relative h-48" role="img" aria-label="Bar chart showing monthly revenue">
+            <p class="text-sm text-surface-500 mb-6">Monthly Revenue Comparison</p>
+            <div class="relative h-48" role="img" aria-label="Bar chart showing monthly revenue, June is the highest.">
               <div class="absolute inset-0 flex items-end justify-between gap-3">
                 <div class="flex-1 flex flex-col items-center">
                   <div class="w-full bg-brand-500 rounded-t-lg chart-bar" style="height: 67%"></div>
@@ -1609,28 +1666,64 @@ Include -webkit-backdrop-filter for Safari. Border: 1px white/20 for depth.</cod
               </div>
             </div>
           </div>
-
+          
           <div class="bg-white rounded-2xl p-6 lg:p-8 shadow-sm border border-surface-200">
-            <h3 class="text-lg font-semibold mb-2">Line Chart</h3>
-            <p class="text-sm text-surface-500 mb-6">User Growth</p>
-            <div class="relative h-48" role="img" aria-label="Line chart showing user growth">
-              <svg class="w-full h-full" viewBox="0 0 400 160" preserveAspectRatio="none">
-                <line x1="0" y1="40" x2="400" y2="40" stroke="#e2e8f0" stroke-width="1"/>
-                <line x1="0" y1="80" x2="400" y2="80" stroke="#e2e8f0" stroke-width="1"/>
-                <line x1="0" y1="120" x2="400" y2="120" stroke="#e2e8f0" stroke-width="1"/>
-                <path d="M0,130 L66,110 L133,115 L200,80 L266,90 L333,50 L400,25 L400,160 L0,160 Z" fill="url(#chartGradient)" opacity="0.3"/>
-                <path d="M0,130 L66,110 L133,115 L200,80 L266,90 L333,50 L400,25" class="chart-line" stroke="#2563eb"/>
-                <circle cx="400" cy="25" r="5" fill="#2563eb" class="chart-dot"/>
-                <defs>
-                  <linearGradient id="chartGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" stop-color="#2563eb"/>
-                    <stop offset="100%" stop-color="#2563eb" stop-opacity="0"/>
-                  </linearGradient>
-                </defs>
-              </svg>
-              <div class="flex justify-between mt-2 text-xs text-surface-500">
-                <span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span>
-              </div>
+            <h3 class="text-lg font-semibold mb-2">Stacked Bar Chart</h3>
+            <p class="text-sm text-surface-500 mb-6">User Acquisition Channels (Q2)</p>
+            <div class="relative h-48 flex items-end justify-between gap-4" role="table" aria-label="Stacked bar chart showing user acquisition channels for Q2.">
+                <div class="flex-1 h-full flex flex-col justify-end" role="rowgroup">
+                    <div class="w-full bg-teal-400 chart-bar rounded-t-lg" style="height: 30%" title="Social: 30%"></div>
+                    <div class="w-full bg-brand-500 chart-bar" style="height: 50%" title="Paid: 50%"></div>
+                    <div class="w-full bg-purple-500 chart-bar" style="height: 20%" title="Organic: 20%"></div>
+                    <span class="text-xs text-surface-500 mt-2" role="rowheader">Apr</span>
+                </div>
+                <div class="flex-1 h-full flex flex-col justify-end" role="rowgroup">
+                    <div class="w-full bg-teal-400 chart-bar rounded-t-lg" style="height: 40%"></div>
+                    <div class="w-full bg-brand-500 chart-bar" style="height: 30%"></div>
+                    <div class="w-full bg-purple-500 chart-bar" style="height: 30%"></div>
+                    <span class="text-xs text-surface-500 mt-2" role="rowheader">May</span>
+                </div>
+                <div class="flex-1 h-full flex flex-col justify-end" role="rowgroup">
+                    <div class="w-full bg-teal-400 chart-bar rounded-t-lg" style="height: 50%"></div>
+                    <div class="w-full bg-brand-500 chart-bar" style="height: 30%"></div>
+                    <div class="w-full bg-purple-500 chart-bar" style="height: 20%"></div>
+                    <span class="text-xs text-surface-700 font-semibold mt-2" role="rowheader">Jun</span>
+                </div>
+                <div class="absolute top-0 right-0 text-xs space-y-1" role="presentation">
+                    <div class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-teal-400"></span> Social</div>
+                    <div class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-brand-500"></span> Paid</div>
+                    <div class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-purple-500"></span> Organic</div>
+                </div>
+                <ul class="chart-data-list">
+                    <li>April: Social 30%, Paid 50%, Organic 20%</li>
+                    <li>May: Social 40%, Paid 30%, Organic 30%</li>
+                    <li>June: Social 50%, Paid 30%, Organic 20%</li>
+                </ul>
+            </div>
+          </div>
+          
+          <div class="bg-white rounded-2xl p-6 lg:p-8 shadow-sm border border-surface-200">
+            <h3 class="text-lg font-semibold mb-2">Doughnut Chart</h3>
+            <p class="text-sm text-surface-500 mb-6">Market Share by Region</p>
+            <div class="flex items-center justify-center relative h-48" role="img" aria-label="Doughnut chart showing Market Share: North America 45%, Europe 30%, Asia 25%.">
+                <svg width="150" height="150" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="45" fill="none" stroke="#e2e8f0" stroke-width="10"/>
+                    <circle cx="50" cy="50" r="45" fill="none" stroke="#3b82f6" stroke-width="10" stroke-dasharray="282.7" stroke-dashoffset="0" transform="rotate(-90 50 50)"/>
+                    <circle cx="50" cy="50" r="45" fill="none" stroke="#9333ea" stroke-width="10" stroke-dasharray="282.7" stroke-dashoffset="-127.2" transform="rotate(-90 50 50)"/>
+                    <circle cx="50" cy="50" r="45" fill="none" stroke="#14b8a6" stroke-width="10" stroke-dasharray="282.7" stroke-dashoffset="-212.0" transform="rotate(-90 50 50)"/>
+                    <circle cx="50" cy="50" r="30" fill="white"/>
+                    <text x="50" y="50" text-anchor="middle" dominant-baseline="middle" font-size="14" fill="#0f172a" font-weight="600">100%</text>
+                </svg>
+                <div class="absolute right-0 top-1/2 transform -translate-y-1/2 text-sm space-y-1">
+                    <div class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-brand-500"></span> North America (45%)</div>
+                    <div class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-purple-600"></span> Europe (30%)</div>
+                    <div class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-teal-500"></span> Asia (25%)</div>
+                </div>
+                <ul class="chart-data-list">
+                    <li>North America: 45%</li>
+                    <li>Europe: 30%</li>
+                    <li>Asia: 25%</li>
+                </ul>
             </div>
           </div>
         </div>
@@ -1847,16 +1940,18 @@ Include -webkit-backdrop-filter for Safari. Border: 1px white/20 for depth.</cod
     
     // --- Ripple Effect Implementation (Micro-Interaction) ---
     document.addEventListener('DOMContentLoaded', () => {
+        // Select all elements with the 'ripple' class
         const buttons = document.querySelectorAll('.ripple');
 
         buttons.forEach(button => {
-            // Check if the button already contains the ripple-element, if so, skip.
-            // This prevents duplicate event listeners if running on a live page.
-            if (button.querySelector('.ripple-element')) return;
+            // Use pointerup/touchend for the visual cue to persist slightly longer
+            button.addEventListener('pointerdown', (event) => {
+                // Remove any existing ripple elements to ensure the animation restarts
+                button.querySelectorAll('.ripple-element').forEach(r => r.remove());
 
-            button.addEventListener('click', (event) => {
                 const rect = button.getBoundingClientRect();
-                const diameter = Math.max(rect.width, rect.height);
+                // Determine the size of the ripple (the diagonal length)
+                const diameter = Math.sqrt(rect.width * rect.width + rect.height * rect.height);
                 const radius = diameter / 2;
 
                 const ripple = document.createElement('span');
